@@ -79,27 +79,6 @@
                 message.innerText = "Enter valid number";
             }
         }
- 
-
-        const secretNumber = Math.floor(Math.random() * 10) + 1;
-
-    function checkguess() {
-      const guess = parseInt(document.getElementById("guess").value);
-      const message = document.getElementById("message");
-
-      if (guess === secretNumber) {
-        message.innerText = `🎉 Correct! The number was ${secretNumber}`;
-      } else if (guess < secretNumber) {
-        message.innerText = "📉 Too low! Try again.";
-      } else if (guess > secretNumber) {
-        message.innerText = "📈 Too high! Try again.";
-      } else {
-        message.innerText = "❌ Please enter a valid number.";
-      }
-    }
-  
-
-
         
   
     </script>
