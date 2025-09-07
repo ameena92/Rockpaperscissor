@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Guess the Number</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(188, 243, 243);
+        }
+        .game-container{
+            text-align: center;
+            background-color: aliceblue;
+            border-radius: 15px;
+            width: 350px;
+            height: 300px;
+            box-shadow:0 4px 15px #0e0d0d;
+        }
+        input{
+            width: 80%;
+            border-radius: 10px;
+            border: 1px,solid;
+            padding: 10px;
+            font-size: 15px;
+
+        }
+        .message {
+            color: blue;
+             margin-top: 15px;
+            font-weight: bold;
+    }
+    button{
+        margin-top: 10px;
+        background-color: aqua;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition :0.3s;
+        font-size: 15px;
+        border: none;
+        font-weight: bold;
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guess the Number!!!🎲</h1>
+        <p>I am thinking of number between 0 to 9</p>
+        <input type="number" id="guess" placeholder="Enter Your Number">
+        <button onclick="checkguess()">Guess</button>
+        <div class="message" id="message"></div>
+
+    </div>
+
+    <script>
+        const secretnumber = Math.floor(Math.random() * 10) + 1;
+        // const secretNumber = Math.floor(Math.random() * 10) + 1;
+        function checkguess(){
+            const guess = parseInt(document.getElementById("guess").value);
+            const message =document.getElementById("message");
+
+            if (guess === secretnumber) {
+                message.innerText = `🎉 correct! The Number was ${secretnumber}`;
+
+            
+            } else if (guess < secretnumber) {
+                message.innerText = "📉 Too low!! Try again";
+
+            } else if(guess > secretnumber) {
+                message.innerText = "📈 Too High!! Try AGian";
+            } else {
+                message.innerText = "Enter valid number";
+            }
+        }
+ 
+
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+    function checkguess() {
+      const guess = parseInt(document.getElementById("guess").value);
+      const message = document.getElementById("message");
+
+      if (guess === secretNumber) {
+        message.innerText = `🎉 Correct! The number was ${secretNumber}`;
+      } else if (guess < secretNumber) {
+        message.innerText = "📉 Too low! Try again.";
+      } else if (guess > secretNumber) {
+        message.innerText = "📈 Too high! Try again.";
+      } else {
+        message.innerText = "❌ Please enter a valid number.";
+      }
+    }
+  
+
+
+        
+  
+    </script>
+</body>
+</html>
